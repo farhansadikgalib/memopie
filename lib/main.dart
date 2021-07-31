@@ -1,12 +1,9 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
-import 'Splash_Screen/Splash Screen.dart';
+import 'package:memopie/Home_Page/HomePage.dart';
 
 Future<void> main()async {
-  WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
-  runApp(const MyApp());
+   WidgetsFlutterBinding.ensureInitialized();
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -20,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreenPage(),
+      home: HomePage(url: 'https://memopie.com/'),
     );
   }
 }

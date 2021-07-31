@@ -1,12 +1,9 @@
 import 'dart:io';
 import 'package:back_pressed/back_pressed.dart';
 import 'package:connectivity/connectivity.dart';
-import 'package:double_back_to_close_app/double_back_to_close_app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:memopie/Check_Connection/No%20Internet.dart';
-import 'package:memopie/Push%20Notification/pushNotification.dart';
-import 'package:shimmer/shimmer.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -19,17 +16,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  FirebaseNotifcation? firebase;
   int checkInt = 0;
   late ConnectivityResult previous;
 
 
 
-  handleAsync() async {
-    await firebase!.initialize();
-    String? token = await firebase!.getToken();
-    print("Firebase token : $token");
-  }
 
 
 
@@ -37,8 +28,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    firebase = FirebaseNotifcation();
-    handleAsync();
+
 
     pullToRefreshController = PullToRefreshController(
       options: PullToRefreshOptions(color: Colors.blue),

@@ -42,7 +42,7 @@ class _SplashScreenPageState extends State<SplashScreenPage>
         });
         print('Internet connected');
         Timer(
-            Duration(seconds: 4),
+            Duration(seconds: 1),
                 () =>
                 Navigator.pushAndRemoveUntil(
                     context,
@@ -50,9 +50,11 @@ class _SplashScreenPageState extends State<SplashScreenPage>
                         url: 'https://memopie.com/')),
                         (route) => false));
 
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text('Connected to the internet'),
-        ));
+        // ScaffoldMessenger.of(context).showSnackBar(
+        //     SnackBar(
+        //   content: Text('Connected to the internet'),
+        // )
+        // );
       }
     });
   }
