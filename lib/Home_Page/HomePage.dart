@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   InAppWebViewController? _webViewController;
-  double progress = 0;
+  // double progress = 0;
   String url = '';
 
   final GlobalKey webViewKey = GlobalKey();
@@ -127,92 +127,18 @@ class _HomePageState extends State<HomePage> {
 
     },
     child: Scaffold(
-      // appBar: AppBar(
-      //   centerTitle: true,
-      //   backgroundColor: Colors.blue,
-      //
-      //   title: Row(
-      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //     crossAxisAlignment: CrossAxisAlignment.center,
-      //     children: [
-      //       Image.asset("assets/icon.png",height: 30,width: 30,color: Colors.white,),
-      //       Padding(
-      //         padding: const EdgeInsets.only(right: 40),
-      //         child: Shimmer.fromColors(
-      //           baseColor: Colors.white,
-      //           highlightColor: Colors.blue,
-      //           child: Column(
-      //             children: [
-      //               Text(
-      //                 'MemoPie',
-      //                 textAlign: TextAlign.center,
-      //                 style: TextStyle(
-      //                   fontSize: 22.0,
-      //                   fontFamily: "Poppins",
-      //                   // fontWeight: FontWeight.bold,
-      //                 ),
-      //               ),
-      //             ],
-      //           ),
-      //         ),
-      //
-      //       ),
-      //     ],
-      //   ),
-      //   actions: <Widget>[
-      //     IconButton(
-      //       onPressed: () {
-      //         _webViewController?.goBack();
-      //       },
-      //       icon: Icon(
-      //         Icons.arrow_back_ios,
-      //         color: Colors.white,
-      //       ),
-      //     ),
-      //     IconButton(
-      //       onPressed: () {
-      //         _webViewController?.reload();
-      //       },
-      //       icon: Icon(
-      //         Icons.refresh,
-      //         color: Colors.white,
-      //       ),
-      //     ),
-      //     IconButton(
-      //       onPressed: () {
-      //         _webViewController?.goForward();
-      //       },
-      //       icon: Icon(
-      //         Icons.arrow_forward_ios,
-      //         color: Colors.white,
-      //       ),
-      //     ),
-      //
-      //     SizedBox(width: 5),
-      //   ],
-      // ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     _webViewController?.reload();
-      //   },
-      //   child: Icon(
-      //     Icons.refresh, color: Colors.white,
-      //
-      //   ),
-      //   backgroundColor: Colors.blue,
-      // ),
       body: SafeArea(
         child: Container(
           child: Column(
             children: [
-              progress < 1.0
-                  ? LinearProgressIndicator(
-                      value: progress,
-                      backgroundColor: Colors.white,
-                      valueColor:
-                          AlwaysStoppedAnimation<Color>(Colors.blue),
-                    )
-                  : Center(),
+              // progress < 1.0
+              //     ? LinearProgressIndicator(
+              //         value: progress,
+              //         backgroundColor: Colors.white,
+              //         valueColor:
+              //             AlwaysStoppedAnimation<Color>(Colors.blue),
+              //       )
+              //     : Center(),
               Expanded(
                 child: InAppWebView(
                   key: webViewKey,
@@ -252,7 +178,7 @@ class _HomePageState extends State<HomePage> {
                       pullToRefreshController.endRefreshing();
                     }
                     setState(() {
-                       this.progress = progress / 100;
+                       // this.progress = progress / 100;
                       urlController.text = this.url;
                     });
                   },
